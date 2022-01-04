@@ -1,5 +1,5 @@
 {
-  "name": "loadouts",
+  "name": "create-my-stats",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -7,16 +7,40 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
+  },
   "dependencies": {
+    "@next-auth/prisma-adapter": "^1.0.1",
+    "@prisma/client": "^3.7.0",
+    "call-of-duty-api": "^2.2.2",
+    "classnames": "^2.3.1",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.1",
     "next": "12.0.7",
+    "next-auth": "^4.0.6",
+    "puppeteer": "^13.0.1",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-dropdown": "^1.9.2"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.178",
     "@types/node": "17.0.5",
     "@types/react": "17.0.38",
-    "eslint": "8.5.0",
+    "@typescript-eslint/eslint-plugin": "^5.8.1",
+    "@typescript-eslint/parser": "^5.8.1",
+    "eslint": "^8.5.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^16.1.0",
     "eslint-config-next": "12.0.7",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "prisma": "^3.7.0",
     "typescript": "4.5.4"
   }
 }

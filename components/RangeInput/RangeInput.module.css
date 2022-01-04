@@ -1,0 +1,17 @@
+.rangeInput {
+  margin-left: 1rem;
+  padding: 0.3rem 0.3rem 0.3rem 1rem;
+  background-color: rgba(255 255 255 / 10%);
+  outline: none;
+  border: none;
+  border-radius: 1rem;
+  color: white;
+}
+
+.label {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  user-select: none;
+}

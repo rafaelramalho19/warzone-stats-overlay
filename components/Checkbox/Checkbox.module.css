@@ -1,0 +1,44 @@
+.label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 1 auto;
+  cursor: pointer;
+  user-select: none;
+}
+
+.input {
+  display: none;
+}
+
+.label:hover .checkbox {
+  transform: scale(1.2);
+}
+
+
+.checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.4rem;
+  border: 1px solid rgba(255 255 255 / 15%);
+  margin-right: 0.4rem;
+  background: rgba(255 255 255 / 10%);
+  transition: transform 0.15s ease-in;
+}
+
+.input:checked + .checkbox .icon {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+.icon {
+  fill: #5fcf65;
+  margin: 2px;
+  opacity: 0;
+  transform: scale(0);
+  transform-origin: 25% 75%;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}

@@ -1,0 +1,60 @@
+.container {
+  width: 100%;
+  padding-top: 1.2rem;
+  animation: cool-intro 0.5s ease-in-out both 0.8s;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1 0 auto;
+}
+
+.textContainer {
+  padding: 1.2rem 0;
+}
+
+.fontContainer {
+  padding: 0;
+  justify-content: space-evenly;
+}
+
+.fontContainer>* {
+  margin: 0 1rem;
+}
+
+.textInput {
+  display: flex;
+  align-items: center;
+}
+
+.textInput input {
+  margin-left: 1rem;
+}
+
+@keyframes cool-intro {
+  from {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+.preview {
+  border: 1px solid rgba(255 255 255 / 15%);
+  margin-top: 1rem;
+  border-radius: 2rem;
+  padding: 2rem;
+  width: 100%;
+  min-height: 200px;
+}
+
+.copy {
+  width: 100%;
+  margin: 1rem 0;
+}
