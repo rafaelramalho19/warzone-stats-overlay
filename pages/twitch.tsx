@@ -62,7 +62,7 @@ const Twitch: NextPage = () => {
             : (<Loading />)}
         </div>
 
-        { subscriptionStatus === TwitchStatus.Verified && <LinkGenerator  />}
+        { subscriptionStatus === TwitchStatus.Verified && <LinkGenerator />}
       </main>
     </div>
   );

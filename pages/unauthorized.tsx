@@ -1,13 +1,12 @@
-import type { NextPage } from 'next'
+import React from 'react';
+import type { NextPage } from 'next';
 
-const Twitch: NextPage = () => {
-  return (
-    <div>
-      <h1>401 - Unauthorized Access.</h1>
+const Twitch: NextPage = () => (
+  <div>
+    <h1>401 - Unauthorized Access.</h1>
 
-      <p>Please login first.</p>
-    </div>
-  )
-}
+    <p>Please login first.</p>
+  </div>
+);
 
-export default Twitch
+export default Twitch;

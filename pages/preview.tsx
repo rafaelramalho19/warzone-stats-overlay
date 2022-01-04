@@ -1,11 +1,6 @@
-import React, { ReactNode } from 'react';
-import type { NextPage } from 'next';
+import React, { ReactElement, ReactNode } from 'react';
 import Head from 'next/head';
 import { Platforms, TodayKillsResponse } from '../types/call-of-duty';
-
-type NextPageWithLayout = NextPage & {
-  noLayout?: boolean
-};
 
 const getKills = async (gamertag: string, platform: Platforms, startingHour: string) => {
   const response: TodayKillsResponse = await (
@@ -26,7 +21,6 @@ const getKills = async (gamertag: string, platform: Platforms, startingHour: str
 type Props = {
   kdRatio: string,
   maxKills: TodayKillsResponse['maxKills'],
-  totalDeaths: TodayKillsResponse['totalDeaths'],
   totalKills: TodayKillsResponse['totalKills'],
   winsToday: TodayKillsResponse['winsToday'],
 
@@ -36,17 +30,12 @@ type Props = {
   showKD: string,
   showKills: string,
   showWins: string,
-  startingHour: string,
   textShadow: string,
   useLocalFont: string,
   useUppercase: string,
 };
 
-type TextProps = {
-  children: ReactNode
-};
-
-const Twitch: NextPageWithLayout = ({
+const Twitch = ({
   kdRatio,
   maxKills,
   totalKills,
@@ -61,9 +50,9 @@ const Twitch: NextPageWithLayout = ({
   textShadow,
   useLocalFont,
   useUppercase,
-}: Props) => {
+}: Props) : ReactElement => {
   // eslint-disable-next-line react/no-unstable-nested-components
-  const Text = ({ children }: TextProps) => (
+  const Text = ({ children }: { children: ReactNode }) => (
     <span style={{
       color,
       textShadow: `1px 1px ${textShadow}`,
@@ -128,7 +117,7 @@ const Twitch: NextPageWithLayout = ({
   );
 };
 
-Twitch.getInitialProps = async ({ query }) => {
+Twitch.getInitialProps = async ({ query }: any) => {
   const stats = await getKills(
     query.gamertag as string,
     (query.platform ?? Platforms.Battlenet) as Platforms,

@@ -15,6 +15,7 @@ export default function Button({
 }: Props): ReactElement {
   const themeClass = theme === 'twitch' ? styles.buttonTwitchThemed : styles.buttonNormal;
   return (
+    // eslint-disable-next-line react/button-has-type
     <button className={classNames(styles.button, className, themeClass)} type={type} onClick={onClick}>
       { children }
     </button>
