@@ -12,19 +12,25 @@ type Request = NextApiRequest & {
   }
 };
 
-export async function middleware(req: Request) {
+export function middleware(req: Request) {
   if (PROTECTED_PATHS.includes(req.nextUrl.pathname)) {
-    const session = await getToken({
-      req,
-      secret: process.env.SECRET || '',
-      secureCookie:
+    const handler = async () => {
+      const session = await getToken({
+        req,
+        secret: process.env.SECRET || '',
+        secureCookie:
         process.env.NEXTAUTH_URL?.startsWith('https://')
         ?? !!process.env.VERCEL_URL,
-    });
+      });
+      if (!session) return NextResponse.redirect('/api/auth/signin');
+
+      return true;
+    };
+    return handler();
     // You could also check for any property on the session object,
     // like role === "admin" or name === "John Doe", etc.
-    if (!session) return NextResponse.redirect('/api/auth/signin');
     // If user is authenticated, continue.
   }
+
   return true;
 }
