@@ -52,6 +52,10 @@ const Home: NextPage = () => (
           <a href="https://www.buymeacoffee.com/raisingz"> Pay me a coffee</a>
           <span className={styles.heart}> 💙</span>
         </div>
+        <div className={styles.footerInfo}>
+          Source Code available
+          <a href="https://github.com/rafaelramalho19/warzone-stats-overlay"> in Github</a>
+        </div>
       </footer>
     </main>
   </div>
