@@ -77,7 +77,7 @@ export default function LinkGeneratorInputs({ gamertag, platform }: Props) : Rea
         <Checkbox label="Use local font" onChange={() => setLocalFontUsage(!useLocalFont)} value={useLocalFont} />
       </div>
 
-      <div className={styles.row}>
+      <div className={classNames(styles.row, styles.lastRow)}>
         <iframe className={styles.preview} src={`/preview?${queryParams}`} title="preview" frameBorder="0" />
       </div>
       <Button
