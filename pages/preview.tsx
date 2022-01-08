@@ -72,6 +72,7 @@ const Twitch = ({
       <Head>
         { useLocalFont !== 'false' ? null
           : <link href={`https://fonts.googleapis.com/css2?family=${fontFamily}&display=swap`} rel="stylesheet" />}
+        <meta httpEquiv="refresh" content="300" />
       </Head>
       { showWins === 'true' && (
       <div>
