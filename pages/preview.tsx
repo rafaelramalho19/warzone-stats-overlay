@@ -119,11 +119,14 @@ const Twitch = ({
 };
 
 Twitch.getInitialProps = async ({ query }: any) => {
+  console.log('Getting stats for', query.gamertag);
   const stats = await getKills(
     query.gamertag as string,
     (query.platform ?? Platforms.Battlenet) as Platforms,
     query.startingHour as string,
   );
+
+  console.log('Got stats for', query.gamerTag);
 
   return {
     ...Object.entries(query).reduce((prev, [key, entry]) => ({
